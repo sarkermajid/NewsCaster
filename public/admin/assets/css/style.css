@@ -1,0 +1,137 @@
+.social_media_card {
+    background-color: #EEE5FF;
+    background-image: url(../img/shape_2.svg);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+
+/* line 601, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body {
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* line 605, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    width: 100%;
+    bottom: 0;
+    top: 70px;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+
+/* line 617, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+}
+
+
+/* line 621, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card {
+    background: #FFF4DE;
+    border-radius: 15px;
+    height: 136px;
+    display: flex;
+    align-items: self-start;
+    flex-direction: column;
+    justify-content: end;
+    padding: 25px;
+}
+
+
+/* line 630, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card span {
+    color: #FFC881;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* line 635, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 0;
+    color: #FFAD44;
+}
+
+
+/* line 641, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(2) {
+    background: #E2FFF6;
+}
+
+
+/* line 643, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(2) span {
+    color: #69E2BD;
+}
+
+
+/* line 646, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(2) h3 {
+    color: #25C997;
+}
+
+
+/* line 650, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(3) {
+    background: #FFE2E5;
+}
+
+
+/* line 652, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(3) span {
+    color: #FF8895;
+}
+
+
+/* line 655, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(3) h3 {
+    color: #F64E60;
+}
+
+
+/* line 659, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(4) {
+    background: #E1F0FF;
+}
+
+
+/* line 661, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(4) span {
+    color: #76B5F5;
+}
+
+
+/* line 664, G:/admin_project/8 admin/Analytic/scss/_byer_table.scss */
+
+.social_media_card .media_card_body .media_card_list .single_media_card:nth-child(4) h3 {
+    color: #3699FF;
+}

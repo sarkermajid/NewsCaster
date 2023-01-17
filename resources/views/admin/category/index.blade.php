@@ -108,6 +108,7 @@
     </div>
 @endsection
 
+@push('scripts')
 <script type="text/javascript">
     // image upload js code
     function showImage(fileInput) {
@@ -130,3 +131,4 @@
         }
     }
 </script>
+@endpush

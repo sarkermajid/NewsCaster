@@ -20,6 +20,7 @@
     <!-- App Css-->
     <link href="{{asset('/')}}admin/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('/')}}admin/assets/css/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
 
 </head>
@@ -237,6 +238,7 @@
     toastr.warning("{{ session('warning') }}");
     @endif
 </script>
+@stack('scripts')
 </body>
 
 
