@@ -24,4 +24,15 @@ class CategoryController extends Controller
     {
         return view('admin.category.manage',['categories'=>Category::orderBy('id','desc')->get()]);
     }
+
+    public function status($id)
+    {
+        Category::updateStatus($id);
+        return redirect()->back()->with('message','Status change successfully');
+    }
+
+    public function edit($id)
+    {
+        return view('admin.category.edit',['category'=>Category::find($id)]);
+    }
 }

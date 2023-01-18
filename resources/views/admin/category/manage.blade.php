@@ -31,9 +31,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td><img src="{{ asset($category->image) }}" height="50" width="70" alt=""></td>
-                                        <td>{{ $category->status == 1 ? 'Active' : 'Inactive'}}</td>
+                                        <td><a href="{{ route('category.status', ['id'=>$category->id]) }}" class="btn {{ $category->status == 1 ? 'btn-success' : 'btn-danger' }}">{{ $category->status == 1 ? 'Active' : 'Inactive' }}</a></td>
                                         <td>
-                                            <a href="" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('category.edit',['id'=>$category->id]) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
