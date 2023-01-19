@@ -1,58 +1,82 @@
 @extends('admin.master')
 
 @section('body')
-    <div class="main-content">
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between">
-                            <h4 class="mb-0 font-size-18">Category Information</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <table class="table" id="tableCategory">
-                                    <thead>
-                                    <tr>
-                                        <th>SL</th>
-                                        <th>Category Name</th>
-                                        <th>Image</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($categories as $category)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $category->name }}</td>
-                                        <td><img src="{{ asset($category->image) }}" height="50" width="70" alt=""></td>
-                                        <td><a href="{{ route('category.status', ['id'=>$category->id]) }}" class="btn {{ $category->status == 1 ? 'btn-success' : 'btn-danger' }}">{{ $category->status == 1 ? 'Active' : 'Inactive' }}</a></td>
-                                        <td>
-                                            <a href="{{ route('category.edit',['id'=>$category->id]) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a href="" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> <!-- end col -->
-                </div> <!-- end row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Category Information</h4>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table" id="tableCategory">
+                        <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Category Name</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($categories as $category)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td><img src="{{ asset($category->image) }}" height="50" width="70"
+                                            alt=""></td>
+                                    <td><a href="{{ route('category.status', ['id' => $category->id]) }}"
+                                            class="btn btn-sm {{ $category->status == 1 ? 'btn-success' : 'btn-danger' }}">{{ $category->status == 1 ? 'Active' : 'Inactive' }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('category.edit', ['id' => $category->id]) }}"
+                                            class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <form method="POST" action="{{ route('category.delete', ['id' => $category->id]) }}">
+                                            @csrf
+                                            <input name="_method" type="hidden">
+                                            <button type="submit" class="btn btn-outline-danger btn-sm show_confirm" data-toggle="tooltip"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
 @endsection
 
 @push('scripts')
-<script>
-    $(document).ready( function () {
-        $('#tableCategory').DataTable();
-    } );
+    <script>
+        $(document).ready(function() {
+            $('#tableCategory').DataTable();
+        });
+    </script>
+
+<script type="text/javascript">
+
+    $('.show_confirm').click(function(event) {
+         var form =  $(this).closest("form");
+         var name = $(this).data("name");
+         event.preventDefault();
+         swal({
+             title: `Are you sure?`,
+             text: "You won't be able to revert this!",
+             icon: "warning",
+             buttons: true,
+             dangerMode: true,
+         })
+         .then((willDelete) => {
+           if (willDelete) {
+             form.submit();
+           }
+         });
+     });
+
 </script>
 @endpush

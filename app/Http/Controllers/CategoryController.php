@@ -35,4 +35,10 @@ class CategoryController extends Controller
     {
         return view('admin.category.edit',['category'=>Category::find($id)]);
     }
+
+    public function delete($id)
+    {
+        Category::deleteCategory($id);
+        return redirect()->back()->with('error','Category delete successfully');
+    }
 }
