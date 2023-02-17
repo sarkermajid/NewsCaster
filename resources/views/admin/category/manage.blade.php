@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0 font-size-18">Category Information</h4>
+                <h4 class="mb-0 font-size-18">Categories</h4>
             </div>
         </div>
     </div>
@@ -34,11 +34,13 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('category.edit', ['id' => $category->id]) }}"
-                                            class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                           class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i> View</a>
+                                        <a href="{{ route('category.edit', ['id' => $category->id]) }}"
+                                            class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
                                         <form method="POST" action="{{ route('category.delete', ['id' => $category->id]) }}">
                                             @csrf
                                             <input name="_method" type="hidden">
-                                            <button type="submit" class="btn btn-outline-danger btn-sm show_confirm" data-toggle="tooltip"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-outline-danger btn-sm show_confirm" data-toggle="tooltip"><i class="fa fa-trash"></i> Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -58,25 +60,25 @@
         });
     </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    $('.show_confirm').click(function(event) {
-         var form =  $(this).closest("form");
-         var name = $(this).data("name");
-         event.preventDefault();
-         swal({
-             title: `Are you sure?`,
-             text: "You won't be able to revert this!",
-             icon: "warning",
-             buttons: true,
-             dangerMode: true,
-         })
-         .then((willDelete) => {
-           if (willDelete) {
-             form.submit();
-           }
+        $('.show_confirm').click(function(event) {
+             var form =  $(this).closest("form");
+             var name = $(this).data("name");
+             event.preventDefault();
+             swal({
+                 title: `Are you sure?`,
+                 text: "You won't be able to revert this!",
+                 icon: "warning",
+                 buttons: true,
+                 dangerMode: true,
+             })
+             .then((willDelete) => {
+               if (willDelete) {
+                 form.submit();
+               }
+             });
          });
-     });
 
-</script>
+    </script>
 @endpush
