@@ -1,3 +1,4 @@
+/* Dashboard css */
 .social_media_card {
     background-color: #EEE5FF;
     background-image: url(../img/shape_2.svg);
@@ -134,4 +135,198 @@
 
 .social_media_card .media_card_body .media_card_list .single_media_card:nth-child(4) h3 {
     color: #3699FF;
+}
+
+.dashboard-box{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75) inset;
+}
+
+
+/* Radio Button design */
+
+.label {
+    display: block;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+.label:first-child .radio {
+    border-radius: 0.5em 0 0 0.5em;
+    box-shadow:
+        0.1em 0 0 #2726267f inset,
+        -0.1em 0 0 #27262600 inset,
+        0 0.1em 0 #afa490 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.2em 0.5em #0000007f,
+        0 -0.1em 0 #926086 inset,
+        -0.1em -0.2em 0 #ffffff7f inset,
+        0.2em 0 0 #ffffff7f inset;
+}
+.label:last-child .radio {
+    border-radius: 0 0.5em 0.5em 0;
+    box-shadow:
+        0 -0.1em 0 #926086 inset,
+        0.1em 0 0 #2726267f inset,
+        -0.1em 0 0 #2726267f inset,
+        0 0.1em 0 #afa490 inset,
+        -0.1em 0 0 #afa490 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.2em 0.5em #0000007f,
+        -0.1em -0.1em 0 0.1em #ffffff7f inset;
+}
+.label:first-child .radio:checked {
+    box-shadow:
+        0.1em 0 0 #272626af inset,
+        -0.1em 0 0 #272626 inset,
+        0 0.1em 0 #847a62 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.1em 0 #ffffff7f,
+        0 -0.1em 0 #722257 inset,
+        -0.1em -0.2em 0 #ffffff7f inset,
+        0.2em 0 0 #ffffff7f inset;
+}
+.label:last-child .radio:checked {
+    box-shadow:
+        0.1em 0 0 #272626af inset,
+        -0.1em 0 0 #272626 inset,
+        0 -0.1em 0 #722257 inset,
+        0 0.1em 0 #847a62 inset,
+        -0.1em 0 0 #847a62 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.1em 0 #ffffff7f,
+        -0.1em -0.1em 0 0.1em #ffffff7f inset;
+}
+.radio {
+    background-image: linear-gradient(#ffffff 33%,#414751 58%,#837b52,#c5baa1,#c3adaa);
+    border-radius: 0;
+    box-shadow:
+        0.1em 0 0 #2726267f inset,
+        -0.1em 0 0 #27262600 inset,
+        0 0.1em 0 #afa490 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.2em 0.5em #0000007f,
+        0 -0.1em 0 #926086 inset,
+        -0.1em -0.2em 0 #ffffff7f inset;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0.5em;
+    width: 100%;
+    height: 1em;
+    transition: box-shadow var(--transDur) ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.radio:checked {
+    background-image: linear-gradient(#ffffff 33%,#414751 58%,#827a7b,#c0b6ac,#c3adaa);
+    box-shadow:
+        0.1em 0 0 #272626af inset,
+        -0.1em 0 0 #272626 inset,
+        0 0.1em 0 #847a62 inset,
+        0 -0.1em 0 #ffffff3f,
+        0 0.1em 0 #ffffff7f,
+        0 -0.1em 0 #722257 inset,
+        -0.1em -0.2em 0 #ffffff7f inset;
+}
+.radio:checked + span {
+    opacity: 1;
+}
+.radio:focus {
+    outline: transparent;
+}
+.radio + span {
+    opacity: 0.65;
+    transition: opacity var(--transDur) ease-in-out;
+}
+.radio{
+    box-shadow: 0!important;
+}
+.radio:hover{
+    box-shadow: 0!important;
+}
+
+
+/* form controll css */
+
+*:focus,
+select:focus,
+.custom-select:focus,
+button:focus,
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input:focus::-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+*:focus,
+select:focus,
+.custom-select:focus,
+button:focus,
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control, .form-select {
+    background-color: #f8f8fb;
+    border: 2px solid #f4f5f9;
+    font-size: 13px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 20px;
+    color: #4f5d77;
+    width: 100%;
+    border-radius: 4px;
+    height: 41px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: transparent;
+    border-color: #f4f5f9;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control.select-multiple, .form-select.select-multiple {
+    height: unset;
+    border-radius: 4px;
+}
+
+.form-label {
+    font-size: 13px;
+}
+
+textarea.form-control {
+    min-height: 100px;
+    border-radius: 4px;
 }

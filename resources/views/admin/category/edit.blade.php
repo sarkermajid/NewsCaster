@@ -1,37 +1,40 @@
 @extends('admin.master')
 
-{{-- Image Upload CSS --}}
-<style>
-    .image_container {
-        height: 120px;
-        width: 200px;
-        border-radius: 6px;
-        overflow: hidden;
-        margin: 10px;
-    }
+@push('styles')
+    {{-- Image Upload CSS --}}
+    <style>
+        .image_container {
+            height: 120px;
+            width: 200px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 10px;
+        }
 
-    .image_container img {
-        height: 100%;
-        width: auto;
-        object-fit: cover;
-    }
+        .image_container img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+        }
 
-    .image_container span {
-        top: -6px;
-        right: 8px;
-        color: red;
-        font-size: 28px;
-        font-weight: normal;
-        cursor: pointer;
-    }
+        .image_container span {
+            top: -6px;
+            right: 8px;
+            color: red;
+            font-size: 28px;
+            font-weight: normal;
+            cursor: pointer;
+        }
 
-    .category-image {
-        min-width: 200px;
-        min-width: 100px;
-        max-width: 400px;
-        max-height: 280px;
-    }
-</style>
+        .category-image {
+            min-width: 200px;
+            min-width: 100px;
+            max-width: 400px;
+            max-height: 280px;
+        }
+
+    </style>
+@endpush
 
 @section('body')
     <div class="row">
@@ -83,7 +86,7 @@
                             </div>
                         </div>
                         <div>
-                            <input type="submit" class="btn btn-primary" value="Add Category">
+                            <input type="submit" class="btn btn-primary" value="Update">
                         </div>
                     </form>
                 </div>

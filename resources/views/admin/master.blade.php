@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:06:42 GMT -->
-
 <head>
 
     <meta charset="utf-8" />
@@ -23,6 +19,7 @@
     <link href="{{ asset('/') }}admin/assets/css/toastr.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/') }}admin/assets/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+    @stack('styles')
 
 </head>
 
@@ -36,7 +33,7 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="{{ route('dashboard') }}" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="{{ asset('/') }}admin/assets/images/logo.svg" alt=""
                                     height="22">
@@ -47,7 +44,7 @@
                             </span>
                         </a>
 
-                        <a href="index.html" class="logo logo-light">
+                        <a href="{{ route('dashboard') }}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="{{ asset('/') }}admin/assets/images/logo-light.svg" alt=""
                                     height="22">
@@ -154,23 +151,23 @@
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-user-plus"></i>
-                                <span>User</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="crypto-wallet.html">Add User</a></li>
-                                <li><a href="crypto-buy-sell.html">Manage User</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-list-check"></i>
                                 <span>Category</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href={{ route('category.add') }}>Add Category</a></li>
                                 <li><a href={{ route('category.manage') }}>Manage Category</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-user-plus"></i>
+                                <span>User</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="crypto-wallet.html">Add User</a></li>
+                                <li><a href="crypto-buy-sell.html">Manage User</a></li>
                             </ul>
                         </li>
 
