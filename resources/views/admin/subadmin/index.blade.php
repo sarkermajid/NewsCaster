@@ -39,11 +39,11 @@
 
 @section('body')
     <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between">
-                            <h4 class="mb-0 font-size-18">Create New Category</h4>
-                        </div>
-                    </div>
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Create New Sub Admin</h4>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -59,6 +59,54 @@
                                     {{ $message }}</h6>
                             @enderror
                             <input type="text" name="name" class="form-control" id="name">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    @error('email')
+                                        <h6 class="modal-header justify-content-start"
+                                            style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                            {{ $message }}</h6>
+                                    @enderror
+                                    <input type="text" name="name" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="mobile">Mobile</label>
+                                    @error('mobile')
+                                        <h6 class="modal-header justify-content-start"
+                                            style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                            {{ $message }}</h6>
+                                    @enderror
+                                    <input type="text" name="name" class="form-control" id="mobile">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    @error('password')
+                                        <h6 class="modal-header justify-content-start"
+                                            style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                            {{ $message }}</h6>
+                                    @enderror
+                                    <input type="text" name="name" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="c_password">Confirm Password</label>
+                                    @error('c_password')
+                                        <h6 class="modal-header justify-content-start"
+                                            style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                            {{ $message }}</h6>
+                                    @enderror
+                                    <input type="text" name="name" class="form-control" id="c_password">
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
@@ -97,7 +145,7 @@
                             </label>
                         </div>
                         <div>
-                            <input type="submit" class="btn btn-primary" value="Add Category">
+                            <input type="submit" class="btn btn-primary" value="Create">
                         </div>
                     </form>
                 </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubadminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/category/status/{id}','status')->name('category.status');
         Route::get('/category/edit/{id}','edit')->name('category.edit');
         Route::post('/category/delete/{id}','delete')->name('category.delete');
+    });
+
+    Route::controller(SubadminController::class)->group(function(){
+        Route::get('/subadmin/add','index')->name('subadmin.add');
     });
 
 });
