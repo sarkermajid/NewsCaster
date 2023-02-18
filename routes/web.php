@@ -38,6 +38,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::controller(SubadminController::class)->group(function(){
         Route::get('/subadmin/add','index')->name('subadmin.add');
+        Route::post('/subadmin/store','store')->name('subadmin.store');
     });
 
 });

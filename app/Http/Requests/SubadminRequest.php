@@ -13,7 +13,7 @@ class SubadminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class SubadminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> 'required',
+            'email'=> 'required|email',
+            'mobile'=> 'required',
+            'password'=> 'required|min:6',
+            'confirm_password'=> 'required_with:password|same:password|min:6',
+            'image'=> 'required',
         ];
     }
 }

@@ -49,7 +49,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('subadmin.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -69,7 +69,7 @@
                                             style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
                                             {{ $message }}</h6>
                                     @enderror
-                                    <input type="text" name="name" class="form-control" id="email">
+                                    <input type="text" name="email" class="form-control" id="email">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -80,7 +80,7 @@
                                             style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
                                             {{ $message }}</h6>
                                     @enderror
-                                    <input type="text" name="name" class="form-control" id="mobile">
+                                    <input type="number" name="mobile" class="form-control" id="mobile">
                                 </div>
                             </div>
                         </div>
@@ -93,18 +93,18 @@
                                             style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
                                             {{ $message }}</h6>
                                     @enderror
-                                    <input type="text" name="name" class="form-control" id="password">
+                                    <input type="password" name="password" class="form-control" id="password">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="c_password">Confirm Password</label>
-                                    @error('c_password')
+                                    <label for="confirm_password">Confirm Password</label>
+                                    @error('confirm_password')
                                         <h6 class="modal-header justify-content-start"
                                             style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
                                             {{ $message }}</h6>
                                     @enderror
-                                    <input type="text" name="name" class="form-control" id="c_password">
+                                    <input type="password" name="confirm_password" class="form-control" id="confirm_password">
                                 </div>
                             </div>
                         </div>
