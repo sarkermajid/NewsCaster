@@ -112,36 +112,14 @@
                     </div>
                 </div>
                 <div class="category__wrapper">
+                    @foreach($categories as $category)
                     <div class="category__item">
                         <a href="blog.html">
-                            <img src="{{asset('/')}}website/assets/img/category/category01.jpg" alt="img">
-                            <span class="cat-name">technology</span>
+                            <img src="{{asset( $category->image )}}" alt="img">
+                            <span class="cat-name">{{ $category->name }}</span>
                         </a>
                     </div>
-                    <div class="category__item">
-                        <a href="blog.html">
-                            <img src="{{asset('/')}}website/assets/img/category/category02.jpg" alt="img">
-                            <span class="cat-name">multiverse</span>
-                        </a>
-                    </div>
-                    <div class="category__item">
-                        <a href="blog.html">
-                            <img src="{{asset('/')}}website/assets/img/category/category03.jpg" alt="img">
-                            <span class="cat-name">sports</span>
-                        </a>
-                    </div>
-                    <div class="category__item">
-                        <a href="blog.html">
-                            <img src="{{asset('/')}}website/assets/img/category/category04.jpg" alt="img">
-                            <span class="cat-name">nature</span>
-                        </a>
-                    </div>
-                    <div class="category__item">
-                        <a href="blog.html">
-                            <img src="{{asset('/')}}website/assets/img/category/category05.jpg" alt="img">
-                            <span class="cat-name">crypto / nft</span>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
