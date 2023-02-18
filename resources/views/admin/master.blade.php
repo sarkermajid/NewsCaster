@@ -163,11 +163,11 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-user-plus"></i>
-                                <span>User</span>
+                                <span>Sub Admin</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="crypto-wallet.html">Add User</a></li>
-                                <li><a href="crypto-buy-sell.html">Manage User</a></li>
+                                <li><a href="{{ route('subadmin.add') }}">Add Subadmin</a></li>
+                                <li><a href="crypto-buy-sell.html">Manage Subadmin</a></li>
                             </ul>
                         </li>
 

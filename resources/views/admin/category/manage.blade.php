@@ -33,15 +33,17 @@
                                             class="btn btn-sm {{ $category->status == 1 ? 'btn-success' : 'btn-danger' }}">{{ $category->status == 1 ? 'Active' : 'Inactive' }}</a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('category.edit', ['id' => $category->id]) }}"
-                                           class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i> View</a>
-                                        <a href="{{ route('category.edit', ['id' => $category->id]) }}"
-                                            class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                                        <form method="POST" action="{{ route('category.delete', ['id' => $category->id]) }}">
-                                            @csrf
-                                            <input name="_method" type="hidden">
-                                            <button type="submit" class="btn btn-outline-danger btn-sm show_confirm" data-toggle="tooltip"><i class="fa fa-trash"></i> Delete</button>
-                                        </form>
+                                        <div>
+                                            <a href="{{ route('category.edit', ['id' => $category->id]) }}"
+                                                class="btn btn-outline-info btn-sm"><i class="fa fa-eye"></i> View</a>
+                                             <a href="{{ route('category.edit', ['id' => $category->id]) }}"
+                                                 class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                                             <form method="POST" action="{{ route('category.delete', ['id' => $category->id]) }}" style="display: inline">
+                                                 @csrf
+                                                 <input name="_method" type="hidden">
+                                                 <button type="submit" class="btn btn-outline-danger btn-sm show_confirm" data-toggle="tooltip"><i class="fa fa-trash"></i> Delete</button>
+                                             </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
