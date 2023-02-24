@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                 <h4 class="mb-0 font-size-18">Create New Category</h4>
+                <h4 class="mb-0 font-size-18">Create About Content</h4>
             </div>
         </div>
     </div>
@@ -50,16 +50,25 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('about.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            @error('name')
-                                <h6 class="modal-header justify-content-start"
-                                    style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
-                                    {{ $message }}</h6>
+                            <label for="title">Title</label>
+                            @error('title')
+                            <h6 class="modal-header justify-content-start"
+                                style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                {{ $message }}</h6>
                             @enderror
-                            <input type="text" name="name" class="form-control" id="name">
+                            <input type="text" name="title" class="form-control" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            @error('description')
+                            <h6 class="modal-header justify-content-start"
+                                style="font-weight: 800; color: #ffffff; background-color: red; padding-top: 10px;  padding-bottom: 10px; font-size: 12px; max-width: 100%; border-radius: 5px;">
+                                {{ $message }}</h6>
+                            @enderror
+                            <textarea class="form-control" id="description" name="description"></textarea>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
@@ -88,17 +97,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="d-block">Status</label>
-                            <label for="Active" class="form-label"><input type="radio" name="status" value="1" id="Active" checked class="label radio">Active
-                            </label>
-                            &nbsp;
-                            &nbsp;
-                            <label for="Deactive" class="form-label"><input type="radio" name="status" value="0" id="Deactive" class="label radio">Deactive
-                            </label>
-                        </div>
                         <div>
-                            <input type="submit" class="btn btn-primary" value="Add Category">
+                            <input type="submit" class="btn btn-primary" value="Add About">
                         </div>
                     </form>
                 </div>
@@ -108,26 +108,26 @@
 @endsection
 
 @push('scripts')
-<script type="text/javascript">
-    // image upload js code
-    function showImage(fileInput) {
-        var files = fileInput.files;
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            var imageType = /image.*/;
-            if (!file.type.match(imageType)) {
-                continue;
+    <script type="text/javascript">
+        // image upload js code
+        function showImage(fileInput) {
+            var files = fileInput.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var imageType = /image.*/;
+                if (!file.type.match(imageType)) {
+                    continue;
+                }
+                var img = document.getElementById('thumbnil');
+                img.file = file;
+                var reader = new FileReader();
+                reader.onload = (function(aImg) {
+                    return function(e) {
+                        aImg.src = e.target.result;
+                    };
+                })(img);
+                reader.readAsDataURL(file);
             }
-            var img = document.getElementById('thumbnil');
-            img.file = file;
-            var reader = new FileReader();
-            reader.onload = (function(aImg) {
-                return function(e) {
-                    aImg.src = e.target.result;
-                };
-            })(img);
-            reader.readAsDataURL(file);
         }
-    }
-</script>
+    </script>
 @endpush

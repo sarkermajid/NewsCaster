@@ -177,7 +177,15 @@
                                 <span>Settings</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="invoices-list.html">About Us</a></li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <span>About Us</span>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href={{ route('about.add') }}>Add About</a></li>
+                                        <li><a href={{ route('about.manage') }}>Manage About</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="invoices-list.html">Contact Us</a></li>
                             </ul>
                         </li>

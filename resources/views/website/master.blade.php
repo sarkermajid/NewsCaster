@@ -91,9 +91,9 @@
                             </div>
                             <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="#">Home</a></li>
+                                    <li class="active"><a href="{{route('home')}}">Home</a></li>
                                     <li class="active"><a href="#">Blog</a></li>
-                                    <li class="active"><a href="#">About Us</a></li>
+                                    <li class="active"><a href="{{route('about')}}">About Us</a></li>
                                     <li class="active"><a href="#">Contact Us</a></li>
                                 </ul>
                             </div>
