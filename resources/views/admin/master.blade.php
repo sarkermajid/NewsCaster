@@ -14,6 +14,8 @@
     <link href="{{ asset('/') }}admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="{{ asset('/') }}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    {{-- custom chart js --}}
+
     <!-- App Css-->
     <link href="{{ asset('/') }}admin/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/') }}admin/assets/css/toastr.min.css" rel="stylesheet" type="text/css" />
@@ -87,6 +89,12 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
+
+                    <div class="dropdown d-none d-lg-inline-block ml-1">
+                        <a href="{{ route('home') }}" target="_blank" class="btn mt-3 text-white" style="background: #2A3042">
+                            Visit website
+                        </a>
                     </div>
 
                     <div class="dropdown d-none d-lg-inline-block ml-1">
@@ -208,8 +216,10 @@
 
         <!-- apexcharts -->
         <script src="{{ asset('/') }}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
-
         <script src="{{ asset('/') }}admin/assets/js/pages/dashboard.init.js"></script>
+
+        {{-- Chart js --}}
+        <script src="{{ asset('/') }}admin/assets/js/chart.js" type="text/javascript"></script>
 
         <!-- App js -->
         <script src="{{ asset('/') }}admin/assets/js/app.js"></script>
@@ -253,7 +263,5 @@
         @stack('scripts')
 </body>
 
-
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:07:20 GMT -->
 
 </html>
