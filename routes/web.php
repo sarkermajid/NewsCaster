@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubadminController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,11 @@ use App\Http\Controllers\SubadminController;
 |
 */
 
-Route::get('/',[HomeController::class,'index'])->name('home');
+//Route::get('/',[HomeController::class,'index'])->name('home');
+Route::controller(HomeController::class)->group(function (){
+   Route::get('/', 'index')->name('home');
+   Route::get('/aboutus','about')->name('about');
+});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
@@ -40,5 +45,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/subadmin/add','index')->name('subadmin.add');
         Route::post('/subadmin/store','store')->name('subadmin.store');
     });
-
+    Route::controller(AboutController::class)->group(function (){
+        Route::get('/about/add','index')->name('about.add');
+        Route::post('/about/store','store')->name('about.store');
+        Route::get('/aboutus/manage','manage')->name('about.manage');
+        Route::get('/aboutus/edit/{id}','edit')->name('about.edit');
+        Route::post('/aboutus/update/{id}','update')->name('about.update');
+        Route::post('/aboutus/delete/{id}','delete')->name('about.delete');
+    });
 });
