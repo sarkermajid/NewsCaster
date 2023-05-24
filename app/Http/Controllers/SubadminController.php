@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\toastr;
-use App\Models\Subadmin;
-use Illuminate\Http\Request;
+
 use App\Http\Requests\SubadminRequest;
+use App\Models\Subadmin;
 
 class SubadminController extends Controller
 {
@@ -16,6 +15,7 @@ class SubadminController extends Controller
     public function store(SubadminRequest $request)
     {
         Subadmin::addSubAdmin($request);
-        return redirect()->back()->with('message','Sub admin added successfully!');
+
+        return redirect()->back()->with('message', 'Sub admin added successfully!');
     }
 }
