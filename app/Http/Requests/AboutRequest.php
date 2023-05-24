@@ -24,9 +24,9 @@ class AboutRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required',
-            'description'=> 'required',
-            'image'=> 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
         ];
     }
 }
