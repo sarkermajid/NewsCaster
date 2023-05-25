@@ -34,10 +34,10 @@ class About extends Model
 
     public static function addAboutContent($request)
     {
-        self::$about                    = new About();
-        self::$about->title             = $request->title;
-        self::$about->image             = self::getImageUrl($request);
-        self::$about->description       = $request->description;
+        self::$about = new About();
+        self::$about->title = $request->title;
+        self::$about->image = self::getImageUrl($request);
+        self::$about->description = $request->description;
         self::$about->save();
     }
 
@@ -52,9 +52,9 @@ class About extends Model
         } else {
             self::$imageUrl = self::$about->image;
         }
-        self::$about->title        = $request->title;
+        self::$about->title = $request->title;
         self::$about->description = $request->description;
-        self::$about->image       = self::$imageUrl;
+        self::$about->image = self::$imageUrl;
         self::$about->save();
     }
 
